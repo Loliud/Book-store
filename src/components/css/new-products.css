@@ -1,0 +1,31 @@
+.new-products{
+    margin: auto;
+    width: 70%;
+    margin-top: 6rem;
+}
+
+.products-description{
+    width: 50%;
+    margin: auto;
+    
+}
+.products-description h1{
+    margin-bottom: 3rem;
+    font-weight: bold;
+}
+.products-description h1 span{
+    color: tomato;
+}
+.products-card{
+    margin-bottom: 4rem;
+}
+.products-card p{
+    color: tomato;
+    font-weight: bold; 
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+}
+.products-card p span{
+    margin-left: 5px;
+    color: #45474c;
+    text-decoration: line-through;
+}

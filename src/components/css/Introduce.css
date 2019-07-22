@@ -1,6 +1,4 @@
-.introduce{
 
-}
 .content{
     position: absolute;
     top: 30%;
@@ -27,7 +25,7 @@
 .content img{
     height: 600px;
 }
-button{
+.move{
     position: absolute;
     justify-content: space-between;
     top: 50%;

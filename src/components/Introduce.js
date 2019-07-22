@@ -6,6 +6,8 @@ import {
 } from 'reactstrap';
 import './css/Introduce.css';
 
+
+
 const items = [
     {
         src: 'http://pngimg.com/uploads/student/student_PNG62523.png',
@@ -57,6 +59,8 @@ class Introduce extends Component {
         this.setState({ activeIndex: newIndex });
     }
 
+   
+
     render() {
         const { activeIndex } = this.state;
 
@@ -78,8 +82,8 @@ class Introduce extends Component {
                         <img src={item.src}></img>
                     </div>
                     <div className="button">
-                        <button id="pre" onClick={this.previous}><i className="fas fa-arrow-left"></i></button>
-                        <button id="next" onClick={this.next} ><i className="fas fa-arrow-right"></i></button>
+                        <button className="move" id="pre" onClick={this.previous}><i className="fas fa-arrow-left"></i></button>
+                        <button className="move" id="next" onClick={this.next} ><i className="fas fa-arrow-right"></i></button>
                     </div>
 
                 </CarouselItem>
