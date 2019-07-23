@@ -2,8 +2,10 @@ import React, {Component} from 'react';
 import Menu from './components/Menu';
 import Introduce from './components/Introduce';
 import NewProducts from './components/NewProducts';
+import Subscribe from './components/Subscribe';
 
 import './App.css';
+
 
 class App extends Component {
 
@@ -15,6 +17,8 @@ class App extends Component {
           <Menu/>
           <Introduce/>
           <NewProducts/>
+          <Subscribe/>
+          {/* <BestSeller/> */}
       </div>
     );
 

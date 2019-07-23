@@ -1,0 +1,95 @@
+/* Stay with us */
+.stay-with-us{
+    
+    padding-top: 3rem;
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    background-image: linear-gradient(to right top, #dff8f9, #e5faf5, #eefcf2, #f7fdf1, #fffef3);
+    
+}
+.stay-with-us .image{
+   width: 100%;
+}
+.stay-with-us .image img:nth-child(1){
+    float: left;
+    height: 40rem;
+}
+.stay-with-us .image img:nth-child(2){
+    height: 20rem;
+}
+.stay-with-us .subscribe{
+    width: 45rem;
+    position: absolute;
+    bottom: 15%;
+    right: 10%;
+}
+.stay-with-us .subscribe h1{
+    font-weight: bold;
+}
+.stay-with-us .subscribe p{
+    color: #5d2525;
+    font-weight: 600;
+    font-family: cursive;
+    font-style: italic;
+}
+.stay-with-us .subscribe input{
+    width: 20rem;
+    border-bottom: 1px solid #DDD;
+    margin-right: 0.5rem;
+    line-height: 3rem;
+}
+::placeholder{
+    font-size: 14px;
+    font-weight: 600;
+}
+.stay-with-us .subscribe button, input{  
+    border: none;
+    outline: none;
+    background: transparent;
+}
+.stay-with-us .subscribe button{
+    user-select: none;
+    position: relative;
+    font-weight: 600;
+    font-style: italic;
+    transition: 0.5s;
+}
+.stay-with-us .subscribe button:hover{
+    color: aqua;
+}
+.stay-with-us .subscribe button::before, ::after{
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background-color: transparent;
+    border-radius: 100%;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.stay-with-us .subscribe button:hover::before{
+    box-shadow: 0px 0px 20px aqua;
+    animation: buttonAnimate 0.5s linear;
+}
+.stay-with-us .subscribe button:active{
+    transform: translate(-50px, -50px);
+}
+.stay-with-us .subscribe button:active::after{
+    box-shadow: 0px 0px 20px tomato;
+    animation: buttonAnimate 0.2s linear;
+
+}
+@keyframes buttonAnimate{
+    from{
+        opacity: 1;
+        transform: scale(1);
+    }
+    to{
+        opacity: 0;
+        transform: scale(10);
+    }
+}

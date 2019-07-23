@@ -17,7 +17,6 @@ class Menu extends Component {
   componentDidMount(){
     document.addEventListener('scroll', ()=>{
       let isScroll = window.scrollY < 300;
-      console.log(isScroll)
       if(isScroll !== this.state.key){
         this.setState({
           key: isScroll
@@ -31,7 +30,6 @@ class Menu extends Component {
   render() {
     
     let classBg = this.state.key ? 'bg-navbar' : 'bg-navbar-isScroll';
-    console.log(classBg);
      
 
     return (

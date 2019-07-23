@@ -5,7 +5,9 @@ nav{
     width: 100%;
     padding: 0;
     z-index: 1;
-    transition: 2s;
+    transition: 1s;
+    user-select: none;
+
 }
 nav ul{
     margin: auto;
@@ -56,6 +58,7 @@ nav h3{
 }
 .bg-navbar-isScroll{
     background-color: rgba(0, 0, 0, 0.9);
+    height: 6vh;
 
 }
 .bg-navbar-isScroll ul li a{

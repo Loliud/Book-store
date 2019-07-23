@@ -76,17 +76,17 @@ class NewProducts extends Component {
         let showProducts = products.map((product, index) => {
             return (
                 <Col key={index} sm={3} className="products-card">
-                    <div class="card">
-                        <div class="front">
+                    <div className="card">
+                        <div className="front">
                             <img src={product.image} />
                         </div>
-                        <div class="back">
-                            <div class="name">
+                        <div className="back">
+                            <div className="name">
                                 <p>Lorem There are many variations of passages of Lorem Ipsum available, but the majority have suffered lebmid alteration in some ledmid form</p>
                             </div>
                             <button className="add-to-card">Add to card</button>
                         </div>
-                        <div class="card-content">
+                        <div className  ="card-content">
                             <h6>{product.name}</h6>
                             <p>$ 48.50 <span> $100.80</span></p>
                         </div>
@@ -107,16 +107,6 @@ class NewProducts extends Component {
                 </div>
                 <Row>
                     {this.showProducts(products)}
-                    <div className="stay-with-us">
-                        <img src="http://pngimg.com/uploads/book/book_PNG51114.png"></img>
-                        <img height={200} src="http://pngimg.com/uploads/book/book_PNG51019.png"></img>
-                        <div>
-                            <h1>STAY WITH UST</h1>
-                            <p>Subscribe to our newsletters now and stay up-to-date with new collections, the latest lookbooks and exclusive offers.</p>
-                            <input type="email" placeholder="Enter your e-mail" required></input>
-                            <submit>Subscribe</submit>
-                        </div>
-                    </div>
                 </Row>
             </div>
         )

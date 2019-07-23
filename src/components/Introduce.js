@@ -29,18 +29,10 @@ class Introduce extends Component {
         this.state = { activeIndex: 0 };
         this.next = this.next.bind(this);
         this.previous = this.previous.bind(this);
-        this.goToIndex = this.goToIndex.bind(this);
-        this.onExiting = this.onExiting.bind(this);
-        this.onExited = this.onExited.bind(this);
+
     }
 
-    onExiting() {
-        this.animating = true;
-    }
 
-    onExited() {
-        this.animating = false;
-    }
 
     next() {
         if (this.animating) return;
@@ -54,24 +46,17 @@ class Introduce extends Component {
         this.setState({ activeIndex: nextIndex });
     }
 
-    goToIndex(newIndex) {
-        if (this.animating) return;
-        this.setState({ activeIndex: newIndex });
-    }
 
-   
+
+
 
     render() {
         const { activeIndex } = this.state;
 
-        const slides = items.map((item) => {
+        const slides = items.map((item, index) => {
             return (
-                <CarouselItem
+                <CarouselItem key={index}
                     className="custom-tag"
-                    tag="div"
-                    key={item.id}
-                    onExiting={this.onExiting}
-                    onExited={this.onExited}
                 >
                     <div className="content">
                         <div className="description">
@@ -95,11 +80,11 @@ class Introduce extends Component {
                 <style>
                     {
                         `.custom-tag {
-                position: relative;
-                max-width: 100%;
-                height: 100vh;
-                background: #f1f1f1;
-              }`
+                            position: relative;
+                            max-width: 100%;
+                            height: 100vh;
+                            background: #f1f1f1;
+                          }`
                     }
                 </style>
                 <Carousel
@@ -107,10 +92,8 @@ class Introduce extends Component {
                     next={this.next}
                     previous={this.previous}
                 >
-                    <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+                    <CarouselIndicators className="active-icon" items={items} activeIndex={activeIndex} />
                     {slides}
-
-
                 </Carousel>
             </div>
         );
