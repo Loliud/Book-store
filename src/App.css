@@ -3,25 +3,33 @@
   overflow: hidden;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+#goAhead a{
+  
+  height: 50px;
+  width: 50px;
+  position: fixed;
+  bottom: 3%;
+  right: 1.5%;
+  border-radius: 50%;
+  background-color: aqua;
+  opacity: 0.4;
+  transition: 0.6s;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#goAhead a:hover{
+  transform: scale(1.2);
+  opacity: 1;
 }
-
-.App-link {
-  color: #61dafb;
+#goAhead a::before{
+  content: '';
+  border: 10px solid white;
+  border-right-color: aqua;
+  border-top-color: aqua;
+  border-left-color: aqua;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -75%);
+  
 }
 
 @keyframes App-logo-spin {

@@ -3,7 +3,8 @@ import Menu from './components/Menu';
 import Introduce from './components/Introduce';
 import NewProducts from './components/NewProducts';
 import Subscribe from './components/Subscribe';
-
+import BestSeller from './components/BestSeller';
+import Footer from './components/Footer';
 import './App.css';
 
 
@@ -18,7 +19,9 @@ class App extends Component {
           <Introduce/>
           <NewProducts/>
           <Subscribe/>
-          {/* <BestSeller/> */}
+          <BestSeller/>
+          <Footer/>
+          <div id="goAhead"><a href="#introduce"></a></div>
       </div>
     );
 

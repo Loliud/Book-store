@@ -76,7 +76,7 @@ class Introduce extends Component {
         });
 
         return (
-            <div className="introduce">
+            <div className="introduce" id="introduce">
                 <style>
                     {
                         `.custom-tag {

@@ -33,7 +33,7 @@ class Menu extends Component {
      
 
     return (
-      <nav className={classBg}>
+      <nav className={classBg} id="menu">
         <h3>Coders.thoidai</h3>
         <ul>
           <li><a href="#">HOME</a></li>
