@@ -1,43 +1,41 @@
-import React, { Component, useState } from 'react';
-
-import useWindowScrollPosition from "@rehooks/window-scroll-position";
+import React, { Component } from 'react';
 import './css/Menu.css';
  
 
 
-function TestNav() {
-  const [change, setChange] = useState(false);
-  const changePosition = 300;
-
-  let position = useWindowScrollPosition();
-  // position == { x: 0, y: 0 }
-
-  if (position.y > changePosition && !change) {
-    setChange(true);
-  }
-
-  if (position.y <= changePosition && change) {
-    setChange(false);
-  }
-
-  let bg = change ? "blue" : "transparent";
-  console.log(bg);
-   
-  return bg;
-  
-  
-}
 
 
 class Menu extends Component {
 
+  constructor(props){
+    super(props);
+    this.state = {
+      key : true
+    }
+  }
+
+  componentDidMount(){
+    document.addEventListener('scroll', ()=>{
+      let isScroll = window.scrollY < 300;
+      console.log(isScroll)
+      if(isScroll !== this.state.key){
+        this.setState({
+          key: isScroll
+        });
+      }
+    });
+  }
+
   
 
   render() {
+    
+    let classBg = this.state.key ? 'bg-navbar' : 'bg-navbar-isScroll';
+    console.log(classBg);
      
 
     return (
-      <nav>
+      <nav className={classBg}>
         <h3>Coders.thoidai</h3>
         <ul>
           <li><a href="#">HOME</a></li>

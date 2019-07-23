@@ -4,8 +4,8 @@ nav{
     height: 12vh;
     width: 100%;
     padding: 0;
-    background-color: #f1f1f1;
     z-index: 1;
+    transition: 2s;
 }
 nav ul{
     margin: auto;
@@ -49,4 +49,15 @@ nav h3{
     font-size: 25px;
     padding: 0.5rem;
     color: #949292;
+}
+
+.bg-navbar{
+    background-color:   transparent;
+}
+.bg-navbar-isScroll{
+    background-color: rgba(0, 0, 0, 0.9);
+
+}
+.bg-navbar-isScroll ul li a{
+    color: white;
 }
