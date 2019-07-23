@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Menu from './components/Menu';
 import Introduce from './components/Introduce';
-import Trend from './components/Trend';
+import NewProducts from './components/NewProducts';
 
 import './App.css';
 
@@ -14,7 +14,7 @@ class App extends Component {
       <div  className="App">
           <Menu/>
           <Introduce/>
-          <Trend/>
+          <NewProducts/>
       </div>
     );
 
