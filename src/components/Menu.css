@@ -30,7 +30,7 @@
 
 }
 #menu ul li a:hover{
-    color: #ce7751;
+    color: #ce7751 !important;
     text-decoration: none;
 }
 #menu h3{

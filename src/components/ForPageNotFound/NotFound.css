@@ -1,0 +1,60 @@
+.not-found{
+   
+}
+.not-found .header{
+    height: 50vh;
+    background-color: #f1f1f1;
+    position: relative;
+}
+.not-found .header img{
+    position: absolute;
+    max-width: 450px;
+    left: 20%;
+    top: 50%;
+    transform: translate(0px, -40%);
+}
+.not-found .header h1{
+    text-align: right;
+    font-size: 50px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    width: 25%;
+    right: 20%;
+    transform: translate(0%, -50%);
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    animation: textAnimate 1s linear;
+    
+}
+.not-found .header h1 span{
+    color: tomato;
+}
+.not-found .notification h1{
+    font-weight: bold;
+}
+.not-found .notification{
+    animation: 1s notiAnimate linear;
+}
+
+
+@keyframes textAnimate{
+    from{
+        right: 100%;
+        transform: scale(0);
+    }
+    to{
+        right: 20%;
+        transform: scale(1);
+    }
+
+
+}
+@keyframes notiAnimate{
+    from{
+        transform: scale(0);
+    }
+    to{
+        transform: scale(1);
+    }
+    
+}

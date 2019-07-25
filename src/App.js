@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import Menu from './components/Menu';
 import './App.css';
-import Products from './components/Products';
+
 // import HomePage from './pages/HomePage/HomePage';
+// import ProductsPage from './pages/ProductsPage/ProductsPage';
+// import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
+import ShoppingCart from './components/ForShoppingCart/ShoppingCart';
 
 class App extends Component {
 
@@ -13,7 +16,9 @@ class App extends Component {
       <div className="App">
         <Menu />
         {/* <HomePage /> */}
-        <Products/>
+        {/* <ProductsPage/> */}
+        {/* <NotFoundPage/> */}
+        <ShoppingCart/>
         <div id="goAhead"><a href="#Products"> </a></div>
       </div>
     );
