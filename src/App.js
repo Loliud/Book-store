@@ -14,7 +14,7 @@ class App extends Component {
         <Menu />
         {/* <HomePage /> */}
         <Products/>
-        <div id="goAhead"><a href="#introduce"> </a></div>
+        <div id="goAhead"><a href="#Products"> </a></div>
       </div>
     );
 
