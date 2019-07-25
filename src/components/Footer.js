@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Spinner } from 'reactstrap';
-import './css/Footer.css';
+import './Footer.css';
 class Footer extends Component {
     constructor(props) {
         super(props);

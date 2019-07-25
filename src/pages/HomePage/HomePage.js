@@ -3,7 +3,6 @@ import Introduce from '../../components/ForHomePage/Introduce';
 import NewProducts from '../../components/ForHomePage/NewProducts';
 import Subscribe from '../../components/ForHomePage/Subscribe';
 import BestSeller from '../../components/ForHomePage/BestSeller';
-import Footer from '../../components/ForHomePage/Footer';
 
 
 class HomePage extends Component {
@@ -14,7 +13,6 @@ class HomePage extends Component {
                 <NewProducts />
                 <Subscribe />
                 <BestSeller />
-                <Footer />
             </div>
         )
     }
