@@ -67,7 +67,6 @@ class ShoppingCart extends Component {
                                         <Button className="submit" color="success">Check out</Button>
                                     </div>
 
-                                    
                                 </ToastBody>
                             </Toast>
                         </div>

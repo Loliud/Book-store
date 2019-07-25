@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import Menu from './components/Menu';
 import './App.css';
 import Footer from './components/Footer';
-
+import Item from './components/ItemSetting/Item';
 // import HomePage from './pages/HomePage/HomePage';
 // import ProductsPage from './pages/ProductsPage/ProductsPage';
 // import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
-import ShoppingCart from './components/ForShoppingCart/ShoppingCart';
+// import ShoppingCartPage from './pages/ShoppingCartPage/ShoppingCartPage';
 
 class App extends Component {
 
@@ -19,7 +19,8 @@ class App extends Component {
         {/* <HomePage /> */}
         {/* <ProductsPage/> */}
         {/* <NotFoundPage/> */}
-        <ShoppingCart/>
+        {/* <ShoppingCartPage/> */}
+        <Item/>
         <Footer/>
         <div id="goAhead"><a href="#Products"> </a></div>
       </div>
