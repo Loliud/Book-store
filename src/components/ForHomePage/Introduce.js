@@ -64,7 +64,7 @@ class Introduce extends Component {
                             <h1>is like <span>Eating</span></h1>
                             <h1>one <span>Potato Chip</span></h1>
                         </div>
-                        <img src={item.src}></img>
+                        <img src={item.src} alt="item"></img>
                     </div>
                     <div className="button">
                         <button className="move" id="pre" onClick={this.previous}><i className="fas fa-arrow-left"></i></button>

@@ -59,7 +59,7 @@
 .stay-with-us .subscribe button:hover{
     color: aqua;
 }
-.stay-with-us .subscribe button::before, ::after{
+.stay-with-us .subscribe button::before{
     content: "";
     position: absolute;
     height: 20px;
@@ -77,11 +77,6 @@
 }
 .stay-with-us .subscribe button:active{
     transform: translate(-50px, -50px);
-}
-.stay-with-us .subscribe button:active::after{
-    box-shadow: 0px 0px 20px tomato;
-    animation: buttonAnimate 0.2s linear;
-
 }
 @keyframes buttonAnimate{
     from{

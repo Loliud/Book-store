@@ -46,7 +46,7 @@ class NewProducts extends Component {
                 <Col key={index} sm={3} className="products-card">
                     <div className="card">
                         <div className="front">
-                            <img src={product.image} />
+                            <img src={product.image}  alt="item"/>
                         </div>
                         <div className="back">
                             <div className="name">

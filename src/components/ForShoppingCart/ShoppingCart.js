@@ -3,15 +3,13 @@ import './ShoppingCart.css';
 import { Button, Toast, ToastBody, ToastHeader } from 'reactstrap';
 
 class ShoppingCart extends Component {
-    constructor(props) {
-        super(props);
-    }
+   
 
     render() {
         return (
             <div className="shopping-cart">
                 <div className="header">
-                    <img src="http://pngimg.com/uploads/book/book_PNG51019.png"></img>
+                    <img src="http://pngimg.com/uploads/book/book_PNG51019.png" alt="item"></img>
                     <h1>I read <span>a book</span> one day and my whole life was <span>changed !</span></h1>
                 </div>
                 <div className="list">
@@ -26,7 +24,7 @@ class ShoppingCart extends Component {
                             <th>REMOVE</th>
                         </tr>
                         <tr>
-                            <td className="slot-image"><img src="https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/2.jpg"></img></td>
+                            <td className="slot-image"><img src="https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/2.jpg" alt="item"></img></td>
                             <td>Blue in the watter</td>
                             <td>160 $</td>
                             <td><input min={1} max={100} type="number" ></input></td>
@@ -34,7 +32,7 @@ class ShoppingCart extends Component {
                             <td><Button color="info">Remove</Button></td>
                         </tr>
                         <tr>
-                            <td className="slot-image"><img src="https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/2.jpg"></img></td>
+                            <td className="slot-image"><img src="https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/2.jpg" alt="item"></img></td>
                             <td>Blue in the watter</td>
                             <td>160 $</td>
                             <td><input min={1} max={100} type="number" ></input></td>
@@ -42,7 +40,7 @@ class ShoppingCart extends Component {
                             <td><Button color="info">Remove</Button></td>
                         </tr>
                         <tr>
-                            <td className="slot-image"><img src="https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/2.jpg"></img></td>
+                            <td className="slot-image"><img src="https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/2.jpg" alt="item"></img></td>
                             <td>Blue in the watter</td>
                             <td>160 $</td>
                             <td><input min={1} max={100} type="number" ></input></td>

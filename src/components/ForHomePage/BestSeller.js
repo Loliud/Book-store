@@ -3,7 +3,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './css/BestSeller.css';
-import { Col, Row } from 'reactstrap';
 import './css/new-products.css';
 
 
@@ -14,9 +13,9 @@ export default class BestSeller extends Component {
         let showProducts = products.map((product, index) => {
             return (
 
-                <div className="card">
+                <div key={index} className="card">
                     <div className="front">
-                        <img src={product.image} />
+                        <img src={product.image}  alt="item"/>
                     </div>
                     <div className="back">
                         <div className="name">

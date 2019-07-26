@@ -2,28 +2,38 @@ import React, { Component } from 'react';
 import Menu from './components/Menu';
 import './App.css';
 import Footer from './components/Footer';
-import Item from './components/ItemSetting/Item';
-// import HomePage from './pages/HomePage/HomePage';
-// import ProductsPage from './pages/ProductsPage/ProductsPage';
-// import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
-// import ShoppingCartPage from './pages/ShoppingCartPage/ShoppingCartPage';
+import { BrowserRouter as Router, Route,  Switch } from "react-router-dom";
+import routes from './routes';
+
 
 class App extends Component {
+
+  showPage = (routes) => {
+      let showPage = null;
+      if(routes.length){
+        showPage = routes.map((route, index) =>{
+          return(
+            <Route key={index} path={route.path} exact={route.exact} component={route.main} />
+          );
+        });
+      }
+      return showPage;
+  }
 
 
 
   render() {
     return (
-      <div className="App">
-        <Menu />
-        {/* <HomePage /> */}
-        {/* <ProductsPage/> */}
-        {/* <NotFoundPage/> */}
-        {/* <ShoppingCartPage/> */}
-        <Item/>
-        <Footer/>
-        <div id="goAhead"><a href="#Products"> </a></div>
-      </div>
+      <Router>
+        <div className="App">
+          <Menu />
+          <Switch>
+            {this.showPage(routes)}
+          </Switch>
+          <Footer />
+          <div id="goAhead"><a href="#Products"> </a></div>
+        </div>
+      </Router>
     );
 
   }

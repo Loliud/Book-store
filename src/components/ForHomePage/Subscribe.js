@@ -6,8 +6,8 @@ class Subscribe extends Component {
         return (
             <div className="stay-with-us">
                 <div className="image">
-                    <img src="http://pngimg.com/uploads/book/book_PNG51114.png"></img>
-                    <img height={200} src="http://pngimg.com/uploads/book/book_PNG51019.png"></img>
+                    <img src="http://pngimg.com/uploads/book/book_PNG51114.png" alt="item"></img>
+                    <img height={200} src="http://pngimg.com/uploads/book/book_PNG51019.png" alt="item"></img>
                 </div>
                 <div className="subscribe">
                     <h1>STAY WITH UST</h1>
