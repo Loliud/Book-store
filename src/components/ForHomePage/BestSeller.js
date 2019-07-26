@@ -4,30 +4,26 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './css/BestSeller.css';
 import './css/new-products.css';
+import { Link } from 'react-router-dom';
 
- class BestSeller extends Component {
+class BestSeller extends Component {
 
 
     showProducts = (products) => {
         let showProducts = products.map((product, index) => {
             return (
-
-                <div key={index} className="card">
-                    <div className="front">
-                        <img src={product.image}  alt="item"/>
-                    </div>
-                    <div className="back">
-                        <div className="name">
-                            <p>Lorem There are many variations of passages of Lorem Ipsum available, but the majority have suffered lebmid alteration in some ledmid form</p>
+                <Link to={`/product/${product.id}`}  key={index}>
+                    <div  className="card" style={{color: 'black'}}>
+                        <div className="front">
+                            <img src={product.image} alt="item" />
                         </div>
-                        <button className="add-to-card">Add to card</button>
+                        <div className="back">
+                            <div className="name">
+                                <p>Lorem There are many variations of passages of Lorem Ipsum available, but the majority have suffered lebmid alteration in some ledmid form</p>
+                            </div>
+                        </div>
                     </div>
-                    <div className="card-content">
-                        <h6>{product.name}</h6>
-                        <p>$ 48.50 <span> $100.80</span></p>
-                    </div>
-
-                </div>
+                </Link>
 
 
             );
@@ -47,8 +43,8 @@ import './css/new-products.css';
             cssEase: "linear"
         };
 
-        let {bestSeller} = this.props;
-        
+        let { bestSeller } = this.props;
+
         return (
             <div className="best-seller">
                 <div className="description">

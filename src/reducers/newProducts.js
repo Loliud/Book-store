@@ -2,37 +2,60 @@ import *as types from '../constants/TypeAction';
 
 let initialState = [
     {
+        id: 1,   
         name: 'Blue in the watter',
-        image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/2.jpg'
+        price: 80,
+        image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/2.jpg',
+        newItem: true,
+        bestSeller: false,
+        inventory: 20
     },
     {
-        name: 'Moon light sadow',
-        image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/6.jpg'
+        id: 2,   
+        name: 'Tory',
+        price: 120,
+        image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/2.jpg',
+        newItem: true,
+        bestSeller: false,
+        inventory: 20
     },
     {
-        name: 'Memorise',
-        image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/4.jpg'
-    },
-    {
-        name: 'Art of illustrator',
-        image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/8.jpg'
-    },
-    {
+        id: 3,   
         name: 'Blue in the watter',
-        image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/2.jpg'
+        price: 120,
+        image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/2.jpg',
+        newItem: true,
+        bestSeller: false,
+        inventory: 20
     },
     {
-        name: 'Moon light sadow',
-        image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/6.jpg'
+        id: 4,   
+        name: 'Blue in the watter',
+        price: 200,
+        image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/2.jpg',
+        newItem: true,
+        bestSeller: false,
+        inventory: 20
     },
     {
-        name: 'Memorise',
-        image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/4.jpg'
+        id: 5,   
+        name: 'Blue in the watter',
+        price: 170,
+        image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/2.jpg',
+        newItem: true,
+        bestSeller: false,
+        inventory: 20
     },
     {
-        name: 'Memorise',
-        image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/4.jpg'
+        id: 6,   
+        name: 'Blue in the watter',
+        price: 150,
+        image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/2.jpg',
+        newItem: true,
+        bestSeller: false,
+        inventory: 20
     }
+    
 
 ]
 

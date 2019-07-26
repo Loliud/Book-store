@@ -17,11 +17,10 @@ class NewProducts extends Component {
                             <div className="name">
                                 <p>Lorem There are many variations of passages of Lorem Ipsum available, but the majority have suffered lebmid alteration in some ledmid form</p>
                             </div>
-                            <button className="add-to-card">Add to card</button>
                         </div>
                         <div className  ="card-content">
                             <h6>{product.name}</h6>
-                            <p>$ 48.50 <span> $100.80</span></p>
+                            <p>{`$ ${Math.floor(product.price * 0.6)}`}<span>{`$ ${product.price}`}</span></p>
                         </div>
 
                     </div>

@@ -75,25 +75,7 @@
 .card:hover .front{
     transform: perspective(600px) rotateY(180deg);
 }
-.add-to-card{
-    padding:  0.5rem;
-    border-radius: 20px;
-    outline: none !important;
-    border: none;
-    background-color: #2ab7ca;
-    color: #f4f4f8;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, aqua);
-    transition: all 0.5s;
-    
-}
-.add-to-card:hover{
-    background: #4a4e4d;
-    color: #fe8a71;
-    transform: scale(1.1);
-}
-.add-to-card:active{
-    transform: translate(-50px, 50px);
-}
+
 .card-content{
     position: absolute;
     top: 102%;
