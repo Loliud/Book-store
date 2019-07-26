@@ -5,8 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import './css/BestSeller.css';
 import './css/new-products.css';
 
-
-export default class BestSeller extends Component {
+ class BestSeller extends Component {
 
 
     showProducts = (products) => {
@@ -48,74 +47,8 @@ export default class BestSeller extends Component {
             cssEase: "linear"
         };
 
-        const products = [
-            {
-                name: 'Blue in the watter',
-                image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/2.jpg'
-            },
-            {
-                name: 'Moon light sadow',
-                image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/6.jpg'
-            },
-            {
-                name: 'Memorise',
-                image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/4.jpg'
-            },
-            {
-                name: 'Art of illustrator',
-                image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/8.jpg'
-            },
-            {
-                name: 'Blue in the watter',
-                image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/2.jpg'
-            },
-            {
-                name: 'Moon light sadow',
-                image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/6.jpg'
-            },
-            {
-                name: 'Memorise',
-                image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/4.jpg'
-            },
-            {
-                name: 'Art of illustrator',
-                image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/8.jpg'
-            },
-            {
-                name: 'Blue in the watter',
-                image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/2.jpg'
-            },
-            {
-                name: 'Moon light sadow',
-                image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/6.jpg'
-            },
-            {
-                name: 'Memorise',
-                image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/4.jpg'
-            },
-            {
-                name: 'Art of illustrator',
-                image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/8.jpg'
-            },
-            {
-                name: 'Moon light sadow',
-                image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/6.jpg'
-            },
-            {
-                name: 'Memorise',
-                image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/4.jpg'
-            },
-            {
-                name: 'Art of illustrator',
-                image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/8.jpg'
-            },
-            {
-                name: 'Blue in the watter',
-                image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/2.jpg'
-            }
-
-        ];
-
+        let {bestSeller} = this.props;
+        
         return (
             <div className="best-seller">
                 <div className="description">
@@ -123,9 +56,11 @@ export default class BestSeller extends Component {
                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered lebmid alteration in some ledmid form</p>
                 </div>
                 <Slider {...settings}>
-                    {this.showProducts(products)}
+                    {this.showProducts(bestSeller)}
                 </Slider>
             </div>
         );
     }
 }
+
+export default BestSeller;

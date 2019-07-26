@@ -2,41 +2,6 @@ import React, { Component } from 'react';
 import { Col, Row } from 'reactstrap';
 import './css/new-products.css';
 
-const products = [
-    {
-        name: 'Blue in the watter',
-        image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/2.jpg'
-    },
-    {
-        name: 'Moon light sadow',
-        image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/6.jpg'
-    },
-    {
-        name: 'Memorise',
-        image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/4.jpg'
-    },
-    {
-        name: 'Art of illustrator',
-        image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/8.jpg'
-    },
-    {
-        name: 'Blue in the watter',
-        image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/2.jpg'
-    },
-    {
-        name: 'Moon light sadow',
-        image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/6.jpg'
-    },
-    {
-        name: 'Memorise',
-        image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/4.jpg'
-    },
-    {
-        name: 'Memorise',
-        image: 'https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/4.jpg'
-    }
-   
-];
 
 class NewProducts extends Component {
 
@@ -67,6 +32,7 @@ class NewProducts extends Component {
         return showProducts;
     }
     render() {
+        let {newProducts} = this.props;
         return (
             <div className="new-products">
                 <div className="products-description">
@@ -74,7 +40,7 @@ class NewProducts extends Component {
                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered lebmid alteration in some ledmid form</p>
                 </div>
                 <Row>
-                    {this.showProducts(products)}
+                    {this.showProducts(newProducts)}
                 </Row>
             </div>
         )

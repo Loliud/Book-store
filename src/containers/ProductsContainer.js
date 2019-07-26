@@ -1,19 +1,14 @@
 import React, { Component } from 'react';
 import Products from '../components/ForProductsPage/Products';
 import {connect} from 'react-redux';
-
-
 class ProductsContainer extends Component {
     
-
-   
     render() {
 
         let {products} = this.props;
-
         return (
            <Products>
-               {
+               {   // chuyen cho children la 1 object
                    {
                        products: products
                    }
@@ -21,7 +16,6 @@ class ProductsContainer extends Component {
            </Products>
         );
     }
-
 };
 
 let mapStateToProps = state =>{

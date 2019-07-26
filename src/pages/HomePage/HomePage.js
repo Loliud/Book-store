@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Introduce from '../../components/ForHomePage/Introduce';
-import NewProducts from '../../components/ForHomePage/NewProducts';
+import NewProductsContainer from '../../containers/NewProductsContainer';
 import Subscribe from '../../components/ForHomePage/Subscribe';
-import BestSeller from '../../components/ForHomePage/BestSeller';
+import BestSellerContainer from '../../containers/BestSellerContainer';
 
 
 class HomePage extends Component {
@@ -10,9 +10,9 @@ class HomePage extends Component {
         return (
             <div>
                 <Introduce />
-                <NewProducts />
+                <NewProductsContainer />
                 <Subscribe />
-                <BestSeller />
+                <BestSellerContainer />
             </div>
         )
     }
