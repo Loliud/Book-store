@@ -1,3 +1,4 @@
+export const GET_DATA_FROM_API = 'GET_DATA_FROM_API';
 export const ADD_TO_CART = 'ADD_TO_CART';
 export const ON_SEARCH = 'ON_SEARCH';
 export const ON_EDIT_CART = 'ON_EDIT_CART';

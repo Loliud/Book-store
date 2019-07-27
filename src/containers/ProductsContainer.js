@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Products from '../components/ForProductsPage/Products';
 import {connect} from 'react-redux';
-import axios from 'axios';
+import *as actions from '../actions/actions';
 class ProductsContainer extends Component {
 
     constructor(props){
@@ -12,13 +12,7 @@ class ProductsContainer extends Component {
     }
 
     componentDidMount(){
-        axios.get('https://5d3029eb28465b00146aaca5.mockapi.io/api/products')
-        .then((res) =>{
-            console.log(res.data);
-            this.setState({
-                products: res.data
-            });
-        });
+       this.props.getDataFromApi();
     }
     
     render() {
@@ -28,7 +22,7 @@ class ProductsContainer extends Component {
            <Products>
                {   // chuyen cho children la 1 object
                    {
-                       products: this.state.products
+                       products: this.props.products
                    }
                }
            </Products>
@@ -42,4 +36,12 @@ let mapStateToProps = state =>{
     }
 }
 
-export default connect(mapStateToProps, null)(ProductsContainer);
+let mapDispatchToProps = (dispatch, props) =>{
+    return {
+        getDataFromApi: () =>{
+            dispatch(actions.getDataFromApiRequest());
+        }
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductsContainer);
