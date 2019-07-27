@@ -1,4 +1,7 @@
 export const GET_DATA_FROM_API = 'GET_DATA_FROM_API';
+export const GET_BEST_SELLER = 'GET_BEST_SELLER';
+export const GET_NEW_PRODUCTS =  'GET_NEW_PRODUCTS';
+export const GET_ITEM_VIEW = 'GET_ITEM_VIEW';
 export const ADD_TO_CART = 'ADD_TO_CART';
 export const ON_SEARCH = 'ON_SEARCH';
 export const ON_EDIT_CART = 'ON_EDIT_CART';

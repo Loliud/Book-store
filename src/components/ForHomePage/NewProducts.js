@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Col, Row } from 'reactstrap';
 import './css/new-products.css';
+import {Link} from 'react-router-dom';
 
 
 class NewProducts extends Component {
@@ -9,6 +10,7 @@ class NewProducts extends Component {
         let showProducts = products.map((product, index) => {
             return (
                 <Col key={index} sm={3} className="products-card">
+                    <Link to={`product/${product.id}`} onClick={() => this.props.onClickToView(product)}>
                     <div className="card">
                         <div className="front">
                             <img src={product.image}  alt="item"/>
@@ -22,9 +24,8 @@ class NewProducts extends Component {
                             <h6>{product.name}</h6>
                             <p>{`$ ${Math.floor(product.price * 0.6)}`}<span>{`$ ${product.price}`}</span></p>
                         </div>
-
                     </div>
-
+                    </Link>
                 </Col>
             );
         });

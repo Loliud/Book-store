@@ -17,7 +17,7 @@
     color: tomato;
 }
 .products-card{
-    margin-bottom: 10rem;
+    margin-bottom: 10rem !important;
 }
 .products-card p{
     color: #4a4e4d ;
@@ -83,6 +83,7 @@
     transform: translate(-50%);
 }
 .card-content h6{
+    color: black ;
     font-weight: bold;
 }
 .card-content p{

@@ -12,7 +12,7 @@ class BestSeller extends Component {
     showProducts = (products) => {
         let showProducts = products.map((product, index) => {
             return (
-                <Link to={`/product/${product.id}`}  key={index}>
+                <Link to={`/product/${product.id}`}  key={index} onClick={() => this.props.onClickToView(product)}>
                     <div  className="card" style={{color: 'black'}}>
                         <div className="front">
                             <img src={product.image} alt="item" />
@@ -30,6 +30,8 @@ class BestSeller extends Component {
         });
         return showProducts;
     }
+
+   
 
     render() {
         const settings = {

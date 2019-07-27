@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './Products.css'
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import {connect}  from'react-redux';
+import *as actions from '../../actions/actions';
 
 class Products extends Component {
     constructor(props) {
@@ -17,7 +19,7 @@ class Products extends Component {
         let showProducts = products.slice(begin, end);
         showProducts = showProducts.map((product, index) => {
             return (
-                <Link to={`/product/${product.id}`} key={index} href="#">
+                <Link to={`/product/${product.id}`} key={index} href="#" onClick={() =>this.onClickToView(product)}>
                     <div className="item-product">
                         <img src={product.image} alt="item"></img>
                         <div className="content">
@@ -29,6 +31,10 @@ class Products extends Component {
             );
         });
         return showProducts;
+    }
+
+    onClickToView = (product)=>{
+        this.props.setViewItem(product);
     }
 
     changePage = (newPage) => {
@@ -73,4 +79,13 @@ class Products extends Component {
     }
 };
 
-export default Products;
+
+let mapDispatchToProps = (dispatch, props) =>{
+    return {
+        setViewItem : (product) =>{
+            dispatch(actions.setViewItem(product))
+        }
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Products);

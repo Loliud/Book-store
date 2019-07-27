@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
 import './Item.css';
 import { Button } from 'reactstrap';
+import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
+import *as actions from '../../actions/actions';
+
 class Item extends Component {
   
-
+    addToCart = (item) =>{
+        this.props.onAddToCart(item);
+    }
 
     render() {
+
+        let {item} = this.props;
         return (
             <div className="item-page">
                 <div className="header">
@@ -16,11 +24,11 @@ class Item extends Component {
                 <div className="item-setting">
                     <div id="image">
                         <div className="item-product">
-                            <img src="https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/8.jpg" alt="item"></img>
+                            <img src={item.image} alt="item"></img>
                         </div>
                     </div>
                     <div className="item-content">
-                        <h2>Semper Sapien</h2>
+                        <h2>{item.name}</h2>
 
                         <div id="rating">
                             <span class="fa fa-star checked"></span>
@@ -29,12 +37,12 @@ class Item extends Component {
                             <span class="fa fa-star checked"></span>
                             <span class="fa fa-star checked"></span>
                         </div>
-                        <h3>$ 52.00</h3>
+                        <h3>$ {item.price}</h3>
                         <p>Ideal for cold-weather training or work outdoors, the Chaz Hoodie promises superior warmth with every wear. Thick material blocks out the wind as ribbed cuffs and bottom band seal in body heat.
                                     Ideal for cold-weather training or work outdoors, the Chaz Hoodie promises superior warmth with every wear.</p>
                         <p>Ideal for cold-weather training or work outdoors, the Chaz Hoodie promises superior warmth with every wear.</p>
                         <p id="availability">Availability: <span>in Stock</span></p>
-                        <Button color="primary">Add to card</Button>
+                        <Link to="/cart"> <Button color="primary" onClick={() => this.addToCart(item)}>Add to card</Button> </Link>
                         <p>Categories: Adventure, Kids' Music</p>
                         <div className="link-icon">
                             <h6>Share:</h6>
@@ -54,4 +62,17 @@ class Item extends Component {
     }
 }
 
-export default Item;
+let mapStateToProps = state =>{
+    return{
+        item: state.itemView
+    }
+}
+let mapDispatchToProps = (dispatch, props) =>{
+    return {
+        onAddToCart : (item) =>{
+            dispatch(actions.addToCart(item));
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Item);
