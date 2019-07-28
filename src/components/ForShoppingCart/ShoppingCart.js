@@ -3,9 +3,69 @@ import './ShoppingCart.css';
 import { Button, Toast, ToastBody, ToastHeader } from 'reactstrap';
 
 class ShoppingCart extends Component {
-   
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            quantity: 1
+        }
+    }
+
+    onChange = (event) => {
+        let value = event.target.value;
+        let id = event.target.name;
+        this.props.setQuantity(id, value);
+    }
+
+    showList = (listItems) => {
+        let showList = null;
+        if (listItems.length) {
+            showList = listItems.map((item, index) => {
+                return (
+                    <tr key={index}>
+                        <td className="slot-image"><img src={item.image} alt="item"></img></td>
+                        <td>{item.name}</td>
+                        <td>{item.price} $</td>
+                        <td><input min={1} max={100} type="number" value={item.quantity} onChange={this.onChange} name={item.id}></input></td>
+                        <td>{item.quantity * item.price} $</td>
+                        <td><Button color="info">Remove</Button></td>
+                    </tr>
+                )
+            });
+        }
+        return showList;
+    }
+
+    getSummary = (listItems) => {
+
+        let subTotal = 0;
+        listItems.forEach(item => {
+            subTotal += item.price * item.quantity;
+        });
+        
+        return (
+            <ToastBody>
+                <div className="title">
+                    <h6>Subtotal</h6>
+                    <h6>Shipping</h6>
+                    <h5>Total</h5>
+                </div>
+                <div className="value">
+                    <p>{subTotal} $</p>
+                    <p>20 $</p>
+                    <p>{subTotal + 20} $</p>
+                    <Button className="submit" color="success">Check out</Button>
+                </div>
+
+            </ToastBody>
+
+        );
+
+    }
 
     render() {
+
+        const {listItems} = this.props;
         return (
             <div className="shopping-cart">
                 <div className="header">
@@ -23,49 +83,14 @@ class ShoppingCart extends Component {
                             <th>TOTAL</th>
                             <th>REMOVE</th>
                         </tr>
-                        <tr>
-                            <td className="slot-image"><img src="https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/2.jpg" alt="item"></img></td>
-                            <td>Blue in the watter</td>
-                            <td>160 $</td>
-                            <td><input min={1} max={100} type="number" ></input></td>
-                            <td>640 $</td>
-                            <td><Button color="info">Remove</Button></td>
-                        </tr>
-                        <tr>
-                            <td className="slot-image"><img src="https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/2.jpg" alt="item"></img></td>
-                            <td>Blue in the watter</td>
-                            <td>160 $</td>
-                            <td><input min={1} max={100} type="number" ></input></td>
-                            <td>640 $</td>
-                            <td><Button color="info">Remove</Button></td>
-                        </tr>
-                        <tr>
-                            <td className="slot-image"><img src="https://demo.hasthemes.com/boighor-preview/boighor-v3/images/books/2.jpg" alt="item"></img></td>
-                            <td>Blue in the watter</td>
-                            <td>160 $</td>
-                            <td><input min={1} max={100} type="number" ></input></td>
-                            <td>640 $</td>
-                            <td><Button color="info">Remove</Button></td>
-                        </tr>
+                        {this.showList(listItems)}
+
                         <div className="p-3 bg-warning my-2 rounded sum">
                             <Toast>
                                 <ToastHeader>
                                     Summary
                              </ToastHeader>
-                                <ToastBody>
-                                    <div className="title">
-                                        <h6>Subtotal</h6>
-                                        <h6>Shipping</h6>
-                                        <h5>Total</h5>
-                                    </div>
-                                    <div className="value">
-                                        <p>1000 $</p>
-                                        <p>20 $</p>
-                                        <p>1020 $</p>
-                                        <Button className="submit" color="success">Check out</Button>
-                                    </div>
-
-                                </ToastBody>
+                                {this.getSummary(listItems)}
                             </Toast>
                         </div>
 

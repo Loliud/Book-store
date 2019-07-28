@@ -77,3 +77,11 @@ export const addToCart = (item) =>{
         item
     }
 }
+
+export const setQuantity = (id, quantity) =>{
+    return {
+        type: types.SET_QUANTITY,
+        id,
+        quantity
+    }
+}

@@ -31,11 +31,11 @@ class Item extends Component {
                         <h2>{item.name}</h2>
 
                         <div id="rating">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
+                            <span className="fa fa-star checked"></span>
+                            <span className="fa fa-star checked"></span>
+                            <span className="fa fa-star checked"></span>
+                            <span className="fa fa-star checked"></span>
+                            <span className="fa fa-star checked"></span>
                         </div>
                         <h3>$ {item.price}</h3>
                         <p>Ideal for cold-weather training or work outdoors, the Chaz Hoodie promises superior warmth with every wear. Thick material blocks out the wind as ribbed cuffs and bottom band seal in body heat.
@@ -47,11 +47,11 @@ class Item extends Component {
                         <div className="link-icon">
                             <h6>Share:</h6>
                             <div className="logo">
-                                <a href="github.com"><i class="fab fa-github"></i></a>
-                                <a href="facebook.com"><i class="fab fa-facebook-square"></i></a>
-                                <a href="twitter.come"><i class="fab fa-twitter"></i></a>
-                                <a href="linkedin.com"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="google.com"><i class="fab fa-google"></i></a>
+                                <a href="github.com"><i className="fab fa-github"></i></a>
+                                <a href="facebook.com"><i className="fab fa-facebook-square"></i></a>
+                                <a href="twitter.come"><i className="fab fa-twitter"></i></a>
+                                <a href="linkedin.com"><i className="fab fa-linkedin-in"></i></a>
+                                <a href="google.com"><i className="fab fa-google"></i></a>
                             </div>
 
                         </div>

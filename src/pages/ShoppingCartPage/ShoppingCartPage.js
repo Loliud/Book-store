@@ -1,13 +1,16 @@
 import React, {Component} from 'react';
-import ShoppingCart from '../../components/ForShoppingCart/ShoppingCart';
+import ShoppingCartContainer from '../../containers/ShoppingCartContainer';
+
 
 class ShoppingCartPage extends Component{
     render(){
         return (
-            <ShoppingCart/>
+            <ShoppingCartContainer/>
         );
     }
 }
+
+
 
 
 export default ShoppingCartPage;

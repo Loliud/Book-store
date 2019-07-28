@@ -68,7 +68,7 @@ class Menu extends Component {
           </li>
         </ul>
         <div className="icon">
-          <i className="fas fa-cart-plus"></i>
+          <Link to="/cart"><i className="fas fa-cart-plus"></i></Link>
           <i className="far fa-user"></i>
         </div>
       </nav>
