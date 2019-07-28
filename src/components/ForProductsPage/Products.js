@@ -2,15 +2,41 @@ import React, { Component } from 'react';
 import './Products.css'
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import {connect}  from'react-redux';
+import { connect } from 'react-redux';
 import *as actions from '../../actions/actions';
 
 class Products extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            page: 1
+            page: 1,
+            searchValue: null,
+            value: null
         }
+    }
+
+    onChange = (event) => {
+        let value = event.target.value;
+        this.setState({
+            value: value
+        });
+    }
+
+    onFilter = (searchValue, products) => {
+        let newProducts;
+        if (searchValue) {
+            newProducts = products.filter(item => {
+                return item.name.toLowerCase().indexOf(searchValue.toLowerCase()) !== -1;
+            });
+        }
+        return newProducts;
+
+    }
+
+    onSearch = () =>{
+        this.setState({
+            searchValue: this.state.value
+        });
     }
 
     showProducts = (products, pageNumber) => {
@@ -19,7 +45,7 @@ class Products extends Component {
         let showProducts = products.slice(begin, end);
         showProducts = showProducts.map((product, index) => {
             return (
-                <Link to={`/product/${product.id}`} key={index} href="#" onClick={() =>this.onClickToView(product)}>
+                <Link to={`/product/${product.id}`} key={index} href="#" onClick={() => this.onClickToView(product)}>
                     <div className="item-product">
                         <img src={product.image} alt="item"></img>
                         <div className="content">
@@ -33,12 +59,11 @@ class Products extends Component {
         return showProducts;
     }
 
-    onClickToView = (product)=>{
+    onClickToView = (product) => {
         this.props.setViewItem(product);
     }
 
     changePage = (newPage) => {
-        console.log(newPage);
         this.setState({
             page: newPage
         });
@@ -47,6 +72,10 @@ class Products extends Component {
     render() {
         let { products } = this.props.children;
         let { page } = this.state;
+        if(this.state.searchValue){
+            products =  this.onFilter(this.state.searchValue, products);
+        }
+        
         return (
             <div className="Products" id="Products">
                 <div className="header">
@@ -56,8 +85,8 @@ class Products extends Component {
                 <div className="list-products" id="list-products">
                     <h1>Products</h1>
                     <div className="input">
-                        <input type="text" name="search" />
-                        <button>Search</button>
+                        <input type="text" name="search" value={this.state.value} onChange={this.onChange} />
+                        <button onClick={this.onSearch}>Search</button>
                     </div>
                     {this.showProducts(products, page)}
                     <Pagination className="pagination-custom">
@@ -80,9 +109,9 @@ class Products extends Component {
 };
 
 
-let mapDispatchToProps = (dispatch, props) =>{
+let mapDispatchToProps = (dispatch, props) => {
     return {
-        setViewItem : (product) =>{
+        setViewItem: (product) => {
             dispatch(actions.setViewItem(product))
         }
     }
