@@ -5,6 +5,7 @@ import ShoppingCartPage from './pages/ShoppingCartPage/ShoppingCartPage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import ItemPage from './pages/ItemPage/ItemPage';
 import CheckoutPage from './pages/CheckoutPage/CheckoutPage';
+import TrackDeliveryPage from './pages/TrackDeliveryPage/TrackDeliveryPage';
 
 const routes =[
     {
@@ -23,7 +24,7 @@ const routes =[
         name: 'CART',
         path: '/cart',
         exact: false,
-        main: () => <ShoppingCartPage/>
+        main: ({history}) => <ShoppingCartPage history={history}/>
     },
     {
         name: '',
@@ -35,7 +36,13 @@ const routes =[
         name: '',
         path: '/checkout',
         exact: false,
-        main: () => <CheckoutPage/>
+        main: ({history}) => <CheckoutPage history={history}/>
+    },
+    {
+        name: '',
+        path: '/delivery',
+        exact: false,
+        main: () => <TrackDeliveryPage/>
     },
     {
         name: 'NOTFOUND',

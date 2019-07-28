@@ -7,8 +7,9 @@ class ShoppingCartContainer extends Component {
    
 
     render() {
+        
         return (
-          <ShoppingCart listItems={this.props.listItems} setQuantity={this.props.setQuantity} onRemoveItem={this.props.onRemoveItem}/>
+          <ShoppingCart history={this.props.history} listItems={this.props.listItems} setQuantity={this.props.setQuantity} onRemoveItem={this.props.onRemoveItem}/>
         );
     }
 }

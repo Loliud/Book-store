@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './ShoppingCart.css';
 import { Button, Toast, ToastBody, ToastHeader } from 'reactstrap';
-import {Link} from 'react-router-dom';
+
 
 class ShoppingCart extends Component {
     constructor(props) {
@@ -10,6 +10,16 @@ class ShoppingCart extends Component {
         this.state = {
             quantity: 1
         }
+    }
+
+    onCheckout = () =>{
+        const {history, listItems} = this.props;
+        if(listItems.length){
+            history.push('/checkout');
+        }else{
+            alert('Khong co san pham nao trong gio hang');
+        }
+       
     }
 
     onChange = (event) => {
@@ -55,7 +65,7 @@ class ShoppingCart extends Component {
                     <p>{subTotal} $</p>
                     <p>20 $</p>
                     <p>{subTotal + 20} $</p>
-                    <Link to="/checkout"><Button className="submit" color="success">Check out</Button></Link>
+                    <Button className="submit" color="success" onClick={this.onCheckout}>Check out</Button>
                 </div>
 
             </ToastBody>

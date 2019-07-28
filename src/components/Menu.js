@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Menu.css';
 import { Link } from 'react-router-dom';
-
+import {connect} from 'react-redux';
 
 
 
@@ -41,6 +41,15 @@ class Menu extends Component {
   //   return showMenu;
   // }
 
+  showDelivery = (checkoutStatus) =>{
+     if(checkoutStatus){
+      return(
+        <Link to="/delivery"><i className="fas fa-plane-departure"></i></Link>
+      );
+    }else{
+      return null;
+    }
+  }
 
   render() {
 
@@ -69,6 +78,7 @@ class Menu extends Component {
         </ul>
         <div className="icon">
           <Link to="/cart"><i className="fas fa-cart-plus"></i></Link>
+          {this.showDelivery(this.props.checkoutStatus)}
           <i className="far fa-user"></i>
         </div>
       </nav>
@@ -79,5 +89,11 @@ class Menu extends Component {
 
 }
 
+let mapStateToProps = state =>{
+  return{
+    checkoutStatus: state.checkoutStatus
+  }
+}
 
-export default Menu;
+
+export default connect(mapStateToProps, null)(Menu);

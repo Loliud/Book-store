@@ -34,12 +34,13 @@ class Checkout extends React.Component {
 
     onSubmit = (event) =>{
         event.preventDefault();
-        if(!this.props.myCart.length){
-            alert('Khong co san pham trong gio hang');
-            return;
-            
-        }
+        const {history} = this.props;
         this.props.onPurchase();
+        this.props.onActiveCheckoutStatus();
+        history.push('/delivery');
+            
+        
+       
     }
 
    
@@ -65,64 +66,64 @@ class Checkout extends React.Component {
                                     <Col md={6}>
                                         <FormGroup>
                                             <Label for="exampleEmail">First name</Label>
-                                            <Input type="text" name="Firstname" />
+                                            <Input type="text" name="Firstname" required />
                                         </FormGroup>
                                     </Col>
                                     <Col md={6}>
                                         <FormGroup>
                                             <Label for="examplePassword">Last name</Label>
-                                            <Input type="text" name="Lastname" />
+                                            <Input type="text" name="Lastname"  required/>
                                         </FormGroup>
                                     </Col>
                                 </Row>
                                 <FormGroup>
                                     <Label for="exampleAddress">Email</Label>
-                                    <Input type="text" name="email" placeholder="you@example.com" />
+                                    <Input type="text" name="email" placeholder="you@example.com" required />
                                 </FormGroup>
                                 <FormGroup>
                                     <Label for="exampleAddress">Phone</Label>
-                                    <Input type="text" name="phone" />
+                                    <Input type="text" name="phone"  required/>
                                 </FormGroup>
                                 <FormGroup>
                                     <Label for="exampleAddress2">Address</Label>
-                                    <Input type="text" name="address" id="exampleAddress2" placeholder="1234 Main St" />
+                                    <Input type="text" name="address" id="exampleAddress2" placeholder="1234 Main St" required />
                                 </FormGroup>
                                 <Row form>
                                     <Col md={6}>
                                         <FormGroup>
                                             <Label for="exampleCity">City</Label>
-                                            <Input type="text" name="city" id="exampleCity" />
+                                            <Input type="text" name="city" id="exampleCity" required />
                                         </FormGroup>
                                     </Col>
                                     <Col md={4}>
                                         <FormGroup>
                                             <Label for="exampleState">State</Label>
-                                            <Input type="text" name="state" id="exampleState" />
+                                            <Input type="text" name="state" id="exampleState"  required/>
                                         </FormGroup>
                                     </Col>
                                     <Col md={2}>
                                         <FormGroup>
                                             <Label for="exampleZip">Zip</Label>
-                                            <Input type="text" name="zip" id="exampleZip" />
+                                            <Input type="text" name="zip" id="exampleZip" required />
                                         </FormGroup>
                                     </Col>
                                 </Row>
                                 <h3 style={{ fontWeight: 'bold', marginBottom: '1rem' }}>PAYMENT</h3>
                                 <FormGroup check>
                                     <Label check>
-                                        <Input type="radio" name="method" />{' '}
+                                        <Input type="radio" name="method" required />{' '}
                                         Credit card
                                      </Label>
                                 </FormGroup>
                                 <FormGroup check>
                                     <Label check>
-                                        <Input type="radio" name="method" />{' '}
+                                        <Input type="radio" name="method"  required/>{' '}
                                         Debit card
                                      </Label>
                                 </FormGroup>
                                 <FormGroup check>
                                     <Label check>
-                                        <Input type="radio" name="method" />{' '}
+                                        <Input type="radio" name="method"  required/>{' '}
                                         PayPal
                                      </Label>
                                 </FormGroup>
@@ -130,13 +131,13 @@ class Checkout extends React.Component {
                                     <Col md={6}>
                                         <FormGroup>
                                             <Label for="exampleEmail">Name on card</Label>
-                                            <Input type="text" name="nameCard" />
+                                            <Input type="text" name="nameCard" required />
                                         </FormGroup>
                                     </Col>
                                     <Col md={6}>
                                         <FormGroup>
                                             <Label for="examplePassword">Credit card number</Label>
-                                            <Input type="text" name="cardNumber" />
+                                            <Input type="text" name="cardNumber"  required/>
                                         </FormGroup>
                                     </Col>
                                 </Row>
@@ -171,6 +172,9 @@ let mapDispatchToProps = (dispatch, props) =>{
     return {
         onPurchase: () =>{
             dispatch(actions.onPurchase())
+        },
+        onActiveCheckoutStatus: () =>{
+            dispatch(actions.activeCheckoutStatus())
         }
     }
 }

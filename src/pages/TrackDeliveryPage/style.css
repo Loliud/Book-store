@@ -1,0 +1,116 @@
+.delivery{
+
+}
+.delivery .header{
+    height: 50vh;
+    background-color: #f1f1f1;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 14rem;
+}
+.delivery .header img{
+    position: absolute;
+    max-width: 450px;
+    left: 20%;
+    top: 50%;
+    transform: translate(0px, -40%);
+    animation: imageAnimate 1.3s linear;
+}
+.delivery .header h1{
+    text-align: right;
+    font-size: 50px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    right: 20%;
+    transform: translate(0%, -50%);
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    animation: textAnimate 1.3s linear;
+}
+.delivery .header h1 span{
+    color: tomato;
+}
+
+@keyframes textAnimate{
+    from{
+        top:  100%
+    }
+    to{
+        top:  50%;
+    }
+
+}
+
+@keyframes imageAnimate{
+    from{
+        left: -20%;
+    }
+    to{
+        left: 20%;
+    }
+}
+
+#progress{
+    position: relative;
+    margin-top: 8rem;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    margin-top: 8rem;
+}
+#progress{
+    font-size: 45px;
+    color: white;
+}
+#progress div{
+    height: 100px;
+    width: 100px;
+    background-color: #09a7a7;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid #09a7a7;
+    position: relative;
+
+}
+#progress div::before{
+    color: #1c3958;
+    position: absolute;
+    font-size: 16px;
+    top: 100%;
+    transform: translate(0px, 50%);
+    font-weight: bold;
+}
+#progress div::after{
+    content: '';
+    position: absolute;
+    height: 5px;
+    width: 300%;
+    background-color: #09a7a7;
+    left: 100%;
+}
+#progress div:nth-child(5)::after{
+    width: 0%;
+}
+#progress div:nth-child(1)::before{
+    content: 'Login';
+}
+#progress div:nth-child(2)::before{
+    content: 'Pre transit';
+}
+#progress div:nth-child(3)::before{
+    content: 'In transit';
+}
+#progress div:nth-child(4)::before{
+    content: 'Out for delivery';
+}
+#progress div:nth-child(5)::before{
+    content: 'Delivered';
+}
+#progress div:nth-child(4), #progress div:nth-child(5){
+    background-color: white;
+    
+}

@@ -97,3 +97,10 @@ export const onPurchase = () =>{
         type: types.ON_PURCHASE
     }
 }
+
+
+export const activeCheckoutStatus = () =>{
+    return {
+        type: types.CHECKOUT_IS_ACTIVE
+    }
+}
