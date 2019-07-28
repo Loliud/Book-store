@@ -4,6 +4,7 @@ import ProductsPage from './pages/ProductsPage/ProductsPage';
 import ShoppingCartPage from './pages/ShoppingCartPage/ShoppingCartPage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import ItemPage from './pages/ItemPage/ItemPage';
+import CheckoutPage from './pages/CheckoutPage/CheckoutPage';
 
 const routes =[
     {
@@ -29,6 +30,12 @@ const routes =[
         path: '/product/:id',
         exact: false,
         main: () => <ItemPage/>
+    },
+    {
+        name: '',
+        path: '/checkout',
+        exact: false,
+        main: () => <CheckoutPage/>
     },
     {
         name: 'NOTFOUND',

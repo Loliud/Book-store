@@ -92,3 +92,8 @@ export const removeItem = (id) =>{
         id
     }
 }
+export const onPurchase = () =>{
+    return {
+        type: types.ON_PURCHASE
+    }
+}

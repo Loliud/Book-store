@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './ShoppingCart.css';
 import { Button, Toast, ToastBody, ToastHeader } from 'reactstrap';
+import {Link} from 'react-router-dom';
 
 class ShoppingCart extends Component {
     constructor(props) {
@@ -54,7 +55,7 @@ class ShoppingCart extends Component {
                     <p>{subTotal} $</p>
                     <p>20 $</p>
                     <p>{subTotal + 20} $</p>
-                    <Button className="submit" color="success">Check out</Button>
+                    <Link to="/checkout"><Button className="submit" color="success">Check out</Button></Link>
                 </div>
 
             </ToastBody>

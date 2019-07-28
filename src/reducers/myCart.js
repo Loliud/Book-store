@@ -44,6 +44,13 @@ let myReducer = (state = initialState, action) => {
             state.splice(index, 1);
             localStorage.setItem('cart', JSON.stringify(state));
             return [...state];
+
+        case types.ON_PURCHASE:
+            console.log('asdadasda');
+            console.log(action);
+            state = [];
+            localStorage.setItem('cart', JSON.stringify(state));
+            return [...state];
         default:
             return [...state];
     }
