@@ -22,13 +22,13 @@ class ShoppingCart extends Component {
         if (listItems.length) {
             showList = listItems.map((item, index) => {
                 return (
-                    <tr key={index}>
+                    <tr key={index} id="item-cart">
                         <td className="slot-image"><img src={item.image} alt="item"></img></td>
                         <td>{item.name}</td>
                         <td>{item.price} $</td>
                         <td><input min={1} max={100} type="number" value={item.quantity} onChange={this.onChange} name={item.id}></input></td>
                         <td>{item.quantity * item.price} $</td>
-                        <td><Button color="info">Remove</Button></td>
+                        <td><Button color="info" onClick={() => this.props.onRemoveItem(item.id)}>Remove</Button></td>
                     </tr>
                 )
             });

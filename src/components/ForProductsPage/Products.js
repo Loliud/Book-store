@@ -11,7 +11,7 @@ class Products extends Component {
         this.state = {
             page: 1,
             searchValue: null,
-            value: null
+            value: ''
         }
     }
 

@@ -8,7 +8,7 @@ class ShoppingCartContainer extends Component {
 
     render() {
         return (
-          <ShoppingCart listItems={this.props.listItems} setQuantity={this.props.setQuantity}/>
+          <ShoppingCart listItems={this.props.listItems} setQuantity={this.props.setQuantity} onRemoveItem={this.props.onRemoveItem}/>
         );
     }
 }
@@ -23,6 +23,9 @@ let mapDisPatchToProps = (dispatch, props) =>{
     return {
         setQuantity: (id, quantity) =>{
             dispatch(actions.setQuantity(id, quantity))
+        },
+        onRemoveItem: (id) =>{
+            dispatch(actions.removeItem(id))
         }
     }
 }

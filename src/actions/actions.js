@@ -85,3 +85,10 @@ export const setQuantity = (id, quantity) =>{
         quantity
     }
 }
+
+export const removeItem = (id) =>{
+    return {
+        type:types.REMOVE_ITEM,
+        id
+    }
+}

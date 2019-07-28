@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 import './Item.css';
 import { Button } from 'reactstrap';
-import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import *as actions from '../../actions/actions';
 
 class Item extends Component {
-  
-    addToCart = (item) =>{
+    
+    addToCart = (item) => {
         this.props.onAddToCart(item);
     }
 
     render() {
 
-        let {item} = this.props;
+        let { item } = this.props;
         return (
             <div className="item-page">
                 <div className="header">
@@ -62,14 +62,14 @@ class Item extends Component {
     }
 }
 
-let mapStateToProps = state =>{
-    return{
+let mapStateToProps = state => {
+    return {
         item: state.itemView
     }
 }
-let mapDispatchToProps = (dispatch, props) =>{
+let mapDispatchToProps = (dispatch, props) => {
     return {
-        onAddToCart : (item) =>{
+        onAddToCart: (item) => {
             dispatch(actions.addToCart(item));
         }
     }
