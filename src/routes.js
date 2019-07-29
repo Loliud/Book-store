@@ -8,6 +8,7 @@ import CheckoutPage from './pages/CheckoutPage/CheckoutPage';
 import TrackDeliveryPage from './pages/TrackDeliveryPage/TrackDeliveryPage';
 import LoginPage from './pages/LoginPage/LoginPage';
 
+
 const routes =[
     {
         name: 'HOME',
@@ -46,6 +47,12 @@ const routes =[
         main: () => <TrackDeliveryPage/>
     },
     {
+        name: '',
+        path: '/login',
+        exact: false,
+        main: ({history}) => <LoginPage history={history}/>
+    },
+     {
         name: '',
         path: '/login',
         exact: false,

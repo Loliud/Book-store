@@ -1,42 +1,66 @@
 import React, { Component } from 'react';
 import './style.css';
-import {connect} from 'react-redux';
-import  *as actions from '../../actions/actions';
+import {Alert} from 'reactstrap';
+import { connect } from 'react-redux';
+import *as actions from '../../actions/actions';
 class LoginPage extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            status: true
         }
     }
 
 
-    onSubmit = (event) =>{
+
+    onSubmit = (event) => {
         event.preventDefault();
         console.log('hello');
-        if(this.state.username === 'ken@gmail.com' && this.state.password === 'kennguyen'){
-            const {history} = this.props;
+        if (this.state.username === 'ken@gmail.com' && this.state.password === 'kennguyen') {
+            this.setState({
+                status: true
+            });
+            const { history } = this.props;
             this.props.onSetUserLogin(this.state);
             history.push('/checkout');
+        } else {
+            this.setState({
+                username: '',
+                password: '',
+                status: false
+            });
         }
-        
+
     }
 
-    onChange = (event) =>{
+    showAlert = (status) =>{
+        if (!status) {
+            return (
+                <Alert color="danger">
+                    Account not valid !
+              </Alert>
+            )
+
+        }
+    }
+
+    onChange = (event) => {
         let name = event.target.name;
         let value = event.target.value;
         this.setState({
-            [name] : value
+            [name]: value
         })
-        
+
     }
 
     render() {
-        let {username, password} = this.state;
+        let { username, password } = this.state;
         return (
             <form id="login-page" onSubmit={this.onSubmit}>
                 <h1>Welcome</h1>
+                {this.showAlert(this.state.status)}
                 <div class="group-button">
                     <input type="text" id="username" name="username" value={username} onChange={this.onChange} required />
                     <label for="username">Username</label>
@@ -53,11 +77,11 @@ class LoginPage extends Component {
 
 }
 
-let mapDispatchToProps = (dispatch, props) =>{
+let mapDispatchToProps = (dispatch, props) => {
     return {
-        onSetUserLogin: (user) =>{
+        onSetUserLogin: (user) => {
             dispatch(actions.setUserLogin(user));
-        } 
+        }
     }
 }
 
