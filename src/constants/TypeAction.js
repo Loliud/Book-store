@@ -10,3 +10,4 @@ export const ON_DELETE_CART = 'ON_DELETE_CART';
 export const ON_PURCHASE = 'ON_PURCHASE';
 export const REMOVE_ITEM = 'REMOVE_ITEM';
 export const CHECKOUT_IS_ACTIVE = 'CHECKOUT_IS_ACTIVE';
+export const ON_LOGIN = 'ON_LOGIN';

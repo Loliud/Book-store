@@ -5,6 +5,13 @@ import { connect } from 'react-redux';
 import *as actions from '../../actions/actions';
 class Checkout extends React.Component {
 
+    componentWillMount(){
+        const {history, user} = this.props;
+        if(!user){
+            history.push('/login');
+        }
+    }
+
 
     getSummary = (listItems) => {
 
@@ -39,8 +46,6 @@ class Checkout extends React.Component {
         this.props.onActiveCheckoutStatus();
         history.push('/delivery');
             
-        
-       
     }
 
    
@@ -164,7 +169,8 @@ class Checkout extends React.Component {
 
 let mapStateToProps = state => {
     return {
-        myCart: state.myCart
+        myCart: state.myCart,
+        user: state.user
     }
 }
 

@@ -104,3 +104,10 @@ export const activeCheckoutStatus = () =>{
         type: types.CHECKOUT_IS_ACTIVE
     }
 }
+
+export const setUserLogin = (user) =>{
+    return{
+        type: types.ON_LOGIN,
+        user
+    }
+}

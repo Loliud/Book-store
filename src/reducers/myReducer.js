@@ -5,6 +5,7 @@ import bestSeller from './bestSeller';
 import itemView from './item';
 import myCart from './myCart';
 import checkoutStatus from './checkoutStatus';
+import user from './user';
 
 let myReducer = combineReducers({
     products,
@@ -12,7 +13,8 @@ let myReducer = combineReducers({
     bestSeller,
     itemView,
     myCart,
-    checkoutStatus
+    checkoutStatus,
+    user
 });
 
 

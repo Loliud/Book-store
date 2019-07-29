@@ -1,0 +1,76 @@
+#login-page{
+    
+    width: 30%;
+    margin-left: 10%;
+    margin-top: 20rem;
+}
+
+#login-page h1{
+    text-align: left;
+    margin-bottom: 3rem;
+    font-weight: bold;
+    
+    user-select: none;
+}
+#login-page form{
+    background-color: white;
+    padding: 50px;
+    box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+}
+#login-page label{
+    color: #948989;
+    pointer-events: none;
+    transition: 0.2s;
+}
+#login-page .group-button{
+    position: relative;
+    margin: 20px auto;
+    margin-right: 0px;
+    margin-left: 0px;
+    padding-bottom: 10px;
+    padding-top: 5px;
+}
+#login-page p{
+    margin-top: 70px;
+    font-size: 13px;
+    color: #757070;
+   
+}
+#login-page a{
+    text-decoration: none;
+    color: black;
+}
+#login-page .group-button label{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+#login-page button{
+    margin: 10px auto;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    background: linear-gradient(90deg, rgba(97,192,205,1) 0%, rgba(63,105,130,1) 32%, rgba(168,0,255,1) 100%, rgba(93,75,166,1) 100%);
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
+}
+#login-page input{
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 1.5px solid #0dccc1;
+}
+#login-page input:focus + label, input:valid + label  {
+    color: #0dccc1 !important;
+    font-size: 14px !important;
+    top: -20px !important;
+} 

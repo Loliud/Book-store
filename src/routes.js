@@ -6,6 +6,7 @@ import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import ItemPage from './pages/ItemPage/ItemPage';
 import CheckoutPage from './pages/CheckoutPage/CheckoutPage';
 import TrackDeliveryPage from './pages/TrackDeliveryPage/TrackDeliveryPage';
+import LoginPage from './pages/LoginPage/LoginPage';
 
 const routes =[
     {
@@ -43,6 +44,12 @@ const routes =[
         path: '/delivery',
         exact: false,
         main: () => <TrackDeliveryPage/>
+    },
+    {
+        name: '',
+        path: '/login',
+        exact: false,
+        main: ({history}) => <LoginPage history={history}/>
     },
     {
         name: 'NOTFOUND',
